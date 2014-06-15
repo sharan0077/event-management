@@ -1,0 +1,22 @@
+html
+  head
+    title Login to Event Management
+  body
+    form(action='/userHome', method='post')
+      table
+        tr
+          td
+            label User Name
+        tr
+          td
+            input(name='userName', placeholder='Enter User Name')
+        tr
+          td
+            label Password
+        tr
+          td
+            input(type='password', name='password', placeholder='Your Password')
+        tr
+          center
+            td(colspan='2')
+              input(type='submit', value='Log In')

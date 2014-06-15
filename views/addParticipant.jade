@@ -1,0 +1,20 @@
+html
+  body
+    form(action='/addParticipant', method='post')
+      | Name &nbsp&nbsp&nbsp&nbsp
+      input(type='text', name='participantName')
+      br
+      | Email-Id &nbsp&nbsp&nbsp&nbsp
+      input(type='text', name='participantEmailId')
+      br
+      | Contact Num &nbsp&nbsp&nbsp&nbsp
+      input(type='text', name='participantContactNum')
+      br
+      | Event-Id &nbsp&nbsp&nbsp&nbsp
+      input(type='text', name='EventId')
+      br
+      | EventName &nbsp&nbsp&nbsp&nbsp
+      input(type='text', name='EventName')
+      br
+      input(type='submit', name='submit')
+      br
