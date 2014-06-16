@@ -1,16 +1,13 @@
 var handler = {};
-var em = require('./EventsLibrary.js');
+var em = require('./EventsDB.js').eventsLib;
 
 handler.addRecord = function (req,res){
-	var result = em.addDetails(req.body);
-    res.render('list');
+	var result = em.addEvent(req.body,res);
 };
 handler.deleteRecord = function(req,res){
-    var result = em.deleteDetails(req.body.eventId);
-    res.render('list');
+    var result = em.deleteEvent(req.body.eventName,res);
 };
 handler.addParticipant = function(req,res){
-    var result = em.addParticipant(req.body);
-    res.render('list');
+    var result = em.addParticipant(req.body,res);
 };
 exports.handler = handler;

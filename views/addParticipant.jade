@@ -2,19 +2,16 @@ html
   body
     form(action='/addParticipant', method='post')
       | Name &nbsp&nbsp&nbsp&nbsp
-      input(type='text', name='participantName')
+      input(type='text', name='name')
       br
       | Email-Id &nbsp&nbsp&nbsp&nbsp
-      input(type='text', name='participantEmailId')
+      input(type='text', name='email')
       br
       | Contact Num &nbsp&nbsp&nbsp&nbsp
-      input(type='text', name='participantContactNum')
-      br
-      | Event-Id &nbsp&nbsp&nbsp&nbsp
-      input(type='text', name='EventId')
+      input(type='text', name='contactNum')
       br
       | EventName &nbsp&nbsp&nbsp&nbsp
-      input(type='text', name='EventName')
+      input(type='text', name='eventName')
       br
       input(type='submit', name='submit')
       br

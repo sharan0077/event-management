@@ -3,44 +3,44 @@ html
     title Add Event
   body
     form(action='/addEvent', method='post')
-      | Event Date &nbsp&nbsp&nbsp
-      input(type='date', name='eventDate')
-      br
       | Event Name
       input(type='text', name='eventName')
       br
-      | Event Id
-      input(type='text', name='eventId')
+      | Date &nbsp&nbsp&nbsp
+      input(type='date', name='date')
       br
-      | InitiatedBy
-      input(type='text', name='initiatedBy')
+      | Organizer
+      input(type='text', name='organizer')
       br
-      | contactNumber
-      input(type='text', name='contactNum')
-      br
-      | InitiatedBy
-      input(type='text', name='initiatedBy')
+      | Organizer Number
+      input(type='text', name='organizerPH')
       br
       | ApprovedBy
       input(type='text', name='approvedBy')
       br
-      | InitiatedBy
-      input(type='text', name='initiatedBy')
-      br
       | Location
       input(type='text', name='location')
       br
-      | RoomName
-      input(type='text', name='roomName')
+      | Place
+      input(type='text', name='place')
+      br
+      | room
+      input(type='text', name='room')
       br
       | Time
       input(type='time', name='time')
       br
       | LogisticArrangements
-      input(type='text', name='logisticArrangements')
+      input(type='text', name='logisticArrangement')
       br
-      | Attendents
-      input(type='text', name='attendents')
+      | Participants
+      input(type='text', name='participants')
+      br
+      | EventType
+      input(type='text', name='eventType')
+      br
+      | Purpose
+      input(type='text', name='eventPurpose')
       br
       input(type='submit', name='submit')
       br
