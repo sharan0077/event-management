@@ -21,14 +21,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/users', users);
 
 app.get('/', routes.getHomePage);
 app.get('/login',routes.getLoginPage);
 //app.post('/authenticate',routes.getUserHome);
 app.post('/userHome',routes.getUserHome);
 app.get('/addEvent',routes.getAddEvent);
-app.use('/users', users);
-app.post('/updateEvent',routes.getUpdateEvent);
+app.get('/updateEvent',routes.getUpdateEvent);
 app.get('/searchEvent',routes.getSearchEvent);
 app.get('/deleteEvent',routes.getDeleteEvent);
 app.get('/addParticipant',routes.getAddParticipant);
@@ -36,6 +36,7 @@ app.get('/addParticipant',routes.getAddParticipant);
 app.post('/addEvent',handler.addRecord);
 app.post('/deleteEvent',handler.deleteRecord);
 app.post('/addParticipant',handler.addParticipant);
+app.post('/updateEvent',handler.updateEvent);
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

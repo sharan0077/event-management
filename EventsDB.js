@@ -37,3 +37,13 @@ eventsLib.addParticipant = function (participant,res){
 		res.render('list');
 	});
 };
+
+eventsLib.updateEvent = function(event,res){
+	delete event.submit;
+	var result = {};
+	var eventToUpdate = 'update Events set ? where eventName="'+event.eventName+'"';
+	connection.query(eventToUpdate,event,function(err,record){
+		if(err) result.message = "Could not update event..";
+		res.render('list');
+	});
+};

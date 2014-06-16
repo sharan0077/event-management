@@ -11,7 +11,6 @@ router.getLoginPage = function(req, res){
 router.getUserHome = function(req,res){
 	res.render('userHome');
 }
-
 router.getAddEvent = function(req,res){
 	res.render('addEvent');
 }
