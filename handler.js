@@ -22,6 +22,15 @@ handler.updateEvent = function(req,res){
 	});
 	var result = em.updateEvent(updatedEvent,res);
 };
+handler.updateParticipant = function(req,res){
+	var updatedParticipant = {};
+	var fields = Object.keys(req.body);
+	fields.forEach(function(field){
+		if(req.body[field] && req.body[field] != "")
+			updatedParticipant[field] = req.body[field];
+	});
+	var result = em.updateParticipant(updatedParticipant,res);
+};
 handler.searchEvent = function(req,res){
 	var eventToSearch = {};
 	var searchBy;

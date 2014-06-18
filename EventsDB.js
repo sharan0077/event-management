@@ -53,17 +53,23 @@ eventsLib.updateEvent = function(event,res){
 	var eventToUpdate = 'update Events set ? where eventName="'+event.eventName+'"';
 	connection.query(eventToUpdate,event,function(err,record){
 		if(err) result.message = "Could not update event..";
-		console.log(record);
 		res.render('list');
 	});
 };
-
+eventsLib.updateParticipant = function(event,res){
+	delete event.submit;
+	var result = {};
+	var eventToUpdate = 'update Participants set ? where eventName="'+event.eventName+'"';
+	connection.query(eventToUpdate,event,function(err,record){
+		if(err) result.message = "Could not update participant..";
+		res.render('list');
+	});
+};
 eventsLib.searchEvent = function(event,searchBy,res){
 	var result = {};
 	var searchQuery = 'select * from Events where '+searchBy;
 	connection.query(searchQuery,event,function(err,record){
 		if(err) result.message = "no records found";
-		console.log(record);
 		res.render('list');
 	});
 };

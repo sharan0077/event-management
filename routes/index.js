@@ -32,4 +32,7 @@ router.getAddParticipant = function(req,res){
 router.getDeleteParticipant = function(req,res){
 	res.render('deleteParticipant');
 }
+router.getUpdateParticipant = function(req,res){
+	res.render('updateParticipant');
+}
 module.exports = router;
