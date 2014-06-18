@@ -1,0 +1,10 @@
+html
+  body
+    form(action='/deleteParticipant', method='post')
+      | Name
+      input(type='text', name='name')
+      br
+      | EventName
+      input(type='text', name='eventName')
+      br
+      input(type='submit', name='submit')

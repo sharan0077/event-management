@@ -1,0 +1,10 @@
+html
+  body
+    form(action='/searchParticipant', method='post')
+      | Name
+      input(type='text', name='name')
+      br
+      | EventName
+      input(type='text', name='eventName')
+      br
+      input(type='submit', name='submit')

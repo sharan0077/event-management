@@ -35,7 +35,7 @@ app.get('/manageParticipants',routes.getManageParticipants);
 app.get('/addParticipant',routes.getAddParticipant);
 app.get('/deleteParticipant',routes.getDeleteParticipant);
 app.get('/updateParticipant',routes.getUpdateParticipant);
-
+app.get('/searchParticipant',routes.getSearchParticipant);
 
 app.post('/addEvent',handler.addRecord);
 app.post('/deleteEvent',handler.deleteRecord);
@@ -45,6 +45,7 @@ app.post('/searchEvent',handler.searchEvent);
 app.post('/addParticipant',handler.addParticipant);
 app.post('/deleteParticipant',handler.deleteParticipant);
 app.post('/updateParticipant',handler.updateParticipant);
+app.post('/searchParticipant',handler.searchParticipant);
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

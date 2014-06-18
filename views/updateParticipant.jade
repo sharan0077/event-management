@@ -1,0 +1,17 @@
+html
+  body
+    form(action='/updateParticipant', method='post')
+      | Name &nbsp&nbsp&nbsp&nbsp
+      input(type='text', name='name')
+      br
+      | Email-Id &nbsp&nbsp&nbsp&nbsp
+      input(type='text', name='email')
+      br
+      | Contact Num &nbsp&nbsp&nbsp&nbsp
+      input(type='text', name='contactNum')
+      br
+      | EventName &nbsp&nbsp&nbsp&nbsp
+      input(type='text', name='eventName')
+      br
+      input(type='submit', name='submit')
+      br

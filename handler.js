@@ -43,4 +43,7 @@ handler.searchEvent = function(req,res){
 		searchBy = searchBy+' && location="'+req.body.location+'"';
 	var result = em.searchEvent(eventToSearch,searchBy,res);
 };
+handler.searchParticipant = function(req,res){
+	var result = em.searchParticipant(req.body,res);
+};
 exports.handler = handler;

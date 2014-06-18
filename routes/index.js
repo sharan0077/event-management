@@ -35,4 +35,7 @@ router.getDeleteParticipant = function(req,res){
 router.getUpdateParticipant = function(req,res){
 	res.render('updateParticipant');
 }
+router.getSearchParticipant = function(req,res){
+	res.render('searchParticipant');
+}
 module.exports = router;
