@@ -65,17 +65,17 @@ eventsLib.updateParticipant = function(event,res){
 		res.render('list');
 	});
 };
-eventsLib.searchEvent = function(event,searchBy,res){
+eventsLib.searchEvent = function(event,res){
 	var result = {};
-	var searchQuery = 'select * from Events where '+searchBy;
-	connection.query(searchQuery,event,function(err,records){
+	var searchQuery = 'select * from Events where '+event;
+	connection.query(searchQuery,function(err,records){
 		if(err) result.message = "no records found";
 		res.render('list');
 	});
 };
 eventsLib.searchParticipant = function(participant,res){
 	var result = {};
-	var searchQuery = 'select * from Participants where name="'+participant.name+'" && eventName="'+participant.eventName+'"';
+	var searchQuery = 'select * from Participants where '+participant;
 	connection.query(searchQuery,function(err,records){
 		if(err) result.message = "no records found";
 		res.render('list');

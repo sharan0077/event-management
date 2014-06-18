@@ -32,7 +32,6 @@ handler.updateParticipant = function(req,res){
 	var result = em.updateParticipant(updatedParticipant,res);
 };
 handler.searchEvent = function(req,res){
-	var eventToSearch = {};
 	var searchBy;
 	if(req.body.searchBy=="organizer")
 		searchBy = 'organizer='+'"'+req.body.searchValue+'"';
@@ -41,9 +40,13 @@ handler.searchEvent = function(req,res){
 	searchBy = 'eventName='+'"'+req.body.searchValue+'"';
 	if(req.body.location && req.body.location!='')
 		searchBy = searchBy+' && location="'+req.body.location+'"';
-	var result = em.searchEvent(eventToSearch,searchBy,res);
+	var result = em.searchEvent(searchBy,res);
 };
 handler.searchParticipant = function(req,res){
-	var result = em.searchParticipant(req.body,res);
+	var searchParticipant = {};
+	var searchBy = 'eventName="'+req.body.eventName+'"';
+	if(req.body.name && req.body.name!='')
+		searchBy = searchBy+' && name="'+req.body.name+'"';
+	var result = em.searchParticipant(searchBy,res);
 };
 exports.handler = handler;
