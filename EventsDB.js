@@ -52,14 +52,16 @@ eventsLib.updateEvent = function(event,res){
 	var result = {};
 	var eventToUpdate = 'update Events set ? where eventName="'+event.eventName+'"';
 	connection.query(eventToUpdate,event,function(err,records){
-		if(err) result.message = "Could not update event..";
+		if(err){ result.message = "Could not update event..";
+		console.log(err);
+	}
 		res.render('list');
 	});
 };
 eventsLib.updateParticipant = function(event,res){
 	delete event.submit;
 	var result = {};
-	var eventToUpdate = 'update Participants set ? where eventName="'+event.eventName+'"';
+	var eventToUpdate = 'update Participants set ? where eventName="'+event.eventName+'" && name="'+event.name+'"';
 	connection.query(eventToUpdate,event,function(err,records){
 		if(err) result.message = "Could not update participant..";
 		res.render('list');
@@ -68,8 +70,10 @@ eventsLib.updateParticipant = function(event,res){
 eventsLib.searchEvent = function(event,res){
 	var result = {};
 	var searchQuery = 'select * from Events where '+event;
+	console.log(searchQuery);
 	connection.query(searchQuery,function(err,records){
 		if(err) result.message = "no records found";
+		console.log(records);
 		res.render('list');
 	});
 };
@@ -78,6 +82,7 @@ eventsLib.searchParticipant = function(participant,res){
 	var searchQuery = 'select * from Participants where '+participant;
 	connection.query(searchQuery,function(err,records){
 		if(err) result.message = "no records found";
+		console.log(records);
 		res.render('list');
 	});
 };

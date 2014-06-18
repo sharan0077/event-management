@@ -3,6 +3,7 @@ html
     form(action='/searchEvent', method='post')
       | Search Type
       select(name='searchBy')
+        option(name='', value='')
         option(value='eventName', name='eventName') EventName
         option(value='date', name='date') Date
         option(value='organizer', name='organizer') Organizer
@@ -11,6 +12,12 @@ html
       input(type='text', name='searchValue')
       br
       | Location
-      input(type='text', name='location')
+      select(name='location')
+        option(name='', value='')
+        option(name='bangalore', value='bangalore') Bangalore
+        option(name='chennai', value='chennai') Chennai
+        option(name='pune', value='pune') Pune
+        option(name='gurgoan', value='gurgoan') Gurgoan
+        option(name='hyderabad', value='hyderabad') Hyderabad
       br
       input(type='submit', name='submit')

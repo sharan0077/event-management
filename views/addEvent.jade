@@ -19,7 +19,13 @@ html
       input(type='text', name='approvedBy')
       br
       | Location
-      input(type='text', name='location')
+      select(name='location')
+        option(name='', value='')
+        option(name='bangalore', value='bangalore') Bangalore
+        option(name='chennai', value='chennai') Chennai
+        option(name='pune', value='pune') Pune
+        option(name='gurgoan', value='gurgoan') Gurgoan
+        option(name='hyderabad', value='hyderabad') Hyderabad
       br
       | Place
       input(type='text', name='place')
@@ -28,19 +34,33 @@ html
       input(type='text', name='room')
       br
       | Time
-      input(type='time', name='time')
+      input(type='text', name='time')
       br
-      | LogisticArrangements
-      input(type='text', name='logisticArrangement')
+      | Chairs
+      input(type='text', name='chair')
+      br
+      | Tables
+      input(type='text', name='tables')
+      br
+      | Projector
+      select(name='projector')
+        option(name='yes', value='yes') Yes
+        option(name='no', value='no') No
       br
       | Participants
       input(type='text', name='participants')
       br
-      | EventType
-      input(type='text', name='eventType')
+      | Billing-Type
+      select(name='billingType')
+        option(name='', value='')
+        option(name='nonBillable', value='nonBillable') Non-Billable
+        option(name='billable', value='billable') Billable
+      br
+      | SponseredBy
+      input(type='text', name='sponseredBy')
       br
       | Purpose
-      input(type='text', name='eventPurpose')
+      textarea(name='eventPurpose', rows='4', cols='50')
       br
       input(type='submit', name='submit')
       br
