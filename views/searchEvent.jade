@@ -1,7 +1,16 @@
 html
   body
-    form(action='/searchResult', method='post')
-      | EventId :
-      input(type='text', name='eventId')
+    form(action='/searchEvent', method='post')
+      | Search Type
+      select(name='searchBy')
+        option(value='eventName', name='eventName') EventName
+        option(value='date', name='date') Date
+        option(value='organizer', name='organizer') Organizer
       br
-      input(type='submit')
+      | Search Value
+      input(type='text', name='searchValue')
+      br
+      | Location
+      input(type='text', name='location')
+      br
+      input(type='submit', name='submit')

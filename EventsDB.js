@@ -28,6 +28,15 @@ eventsLib.deleteEvent = function (eventName,res){
 	});
 };
 
+eventsLib.deleteParticipant = function(participant,res){
+	var result = {};
+	var deleteParticipantQuery = 'delete from Participants where eventName='+'"'+participant.eventName+'" && name="'+participant.name+'"';
+	connection.query(deleteParticipantQuery,function(err,record){
+		if(err) result.message = "Cannot delete participant. Participant does not exists..";
+		res.render('list');
+	});
+};
+
 eventsLib.addParticipant = function (participant,res){
 	delete participant.submit;
 	var result = {};
@@ -44,6 +53,17 @@ eventsLib.updateEvent = function(event,res){
 	var eventToUpdate = 'update Events set ? where eventName="'+event.eventName+'"';
 	connection.query(eventToUpdate,event,function(err,record){
 		if(err) result.message = "Could not update event..";
+		console.log(record);
+		res.render('list');
+	});
+};
+
+eventsLib.searchEvent = function(event,searchBy,res){
+	var result = {};
+	var searchQuery = 'select * from Events where '+searchBy;
+	connection.query(searchQuery,event,function(err,record){
+		if(err) result.message = "no records found";
+		console.log(record);
 		res.render('list');
 	});
 };

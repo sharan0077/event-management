@@ -23,7 +23,13 @@ router.getSearchEvent = function(req,res){
 router.getDeleteEvent = function(req,res){
 	res.render('deleteEvent');
 }
+router.getManageParticipants = function(req,res){
+	res.render('manageParticipants');
+}
 router.getAddParticipant = function(req,res){
 	res.render('addParticipant');
+}
+router.getDeleteParticipant = function(req,res){
+	res.render('deleteParticipant');
 }
 module.exports = router;

@@ -31,12 +31,17 @@ app.get('/addEvent',routes.getAddEvent);
 app.get('/updateEvent',routes.getUpdateEvent);
 app.get('/searchEvent',routes.getSearchEvent);
 app.get('/deleteEvent',routes.getDeleteEvent);
+app.get('/manageParticipants',routes.getManageParticipants);
 app.get('/addParticipant',routes.getAddParticipant);
+app.get('/deleteParticipant',routes.getDeleteParticipant);
 
 app.post('/addEvent',handler.addRecord);
 app.post('/deleteEvent',handler.deleteRecord);
 app.post('/addParticipant',handler.addParticipant);
 app.post('/updateEvent',handler.updateEvent);
+app.post('/searchEvent',handler.searchEvent);
+app.post('/addParticipant',handler.addParticipant);
+app.post('/deleteParticipant',handler.deleteParticipant);
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
